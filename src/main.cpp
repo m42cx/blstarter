@@ -2524,7 +2524,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
 
-     if (true && genesis.GetHash() != hashGenesisBlock)
+     if (true && block.GetHash() != hashGenesisBlock)
                         {
                             printf("Searching for genesis block...\n");
                             uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
