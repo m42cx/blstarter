@@ -2508,7 +2508,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "24 Nov 2017 Start test Bona Monero";
         CTransaction txNew;
-        txNew.nTime = 1511538762; // 11/24/2017 @ 3:52pm (UTC)
+        txNew.nTime = 1511545274; // 11/24/2017 @ 5:41pm (UTC)
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2518,7 +2518,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1511538762;
+        block.nTime    = 1511545274;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = !fTestNet ? 164482 : 216178;
 
