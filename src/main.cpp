@@ -2523,8 +2523,8 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nNonce   = !fTestNet ? 164482 : 216178;
 
 
-
-     if (true && block.GetHash() != hashGenesisBlock)
+       
+     if (true && block.GetHash() != block.hashGenesisBlock)
                         {
                             printf("Searching for block block...\n");
                             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
@@ -2556,7 +2556,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
 
         //// debug print
-        block.GetHash();
+        assert(block.hashGenesisBlock == uint256(""));
         assert(block.hashMerkleRoot == uint256(""));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
